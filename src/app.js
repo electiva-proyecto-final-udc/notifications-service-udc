@@ -1,8 +1,12 @@
 const express = require("express");
+const verifyToken = require("./middleware/auth.middleware");
+
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+app.use(verifyToken);
+
 
 app.use("/api/tecnicos", require("./routes/tecnicoRoutes"));
 app.use("/api/equipos", require("./routes/equipoRoutes"));
