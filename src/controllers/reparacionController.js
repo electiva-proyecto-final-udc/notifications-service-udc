@@ -2,11 +2,29 @@ const ReparacionDTO = require("../dto/ReparacionDTO");
 const reparacionService = require("../services/reparacionService");
 const { generarReporte } = require("../utils/pdfGenerator");
 
-exports.finalizarReparacion = (req, res) => {
-  const { equipoId, descripcion, cliente } = req.body;
-  const reparacion = new ReparacionDTO(equipoId, descripcion, cliente);
-  const saved = reparacionService.save(reparacion);
-  res.json({ status: "success", message: "Reparación finalizada", data: saved });
+const MailDTO = require("../dto/MailDTO");
+const { sendMail } = require("../services/sendEmailService");
+
+exports.finishReparation = async (req, res) => {
+  try {
+    const dto = new MailDTO({
+      to: req.body.to,
+      subject: "Reparación finalizada",
+      templateName: "welcomeEmail",
+      templateData: {
+        username: req.body.username,
+        password: req.body.password
+      },
+      pdf: false
+    });
+
+    await sendMail(dto);
+
+  res.json({ status: "success", message: "Reparación finalizada"});
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "No se pudo enviar el correo" });
+  }
 };
 
 exports.generarReporte = (req, res) => {

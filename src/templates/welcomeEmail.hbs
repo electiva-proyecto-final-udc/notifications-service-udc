@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7fa;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f4f7fa; padding: 40px 20px;">
+        <tr>
+            <td align="center">
+                <!-- Contenedor principal -->
+                <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden; max-width: 100%;">
+                    
+                    <!-- Header con gradiente -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 50px 40px; text-align: center;">
+                            <h1 style="margin: 0; color: #ffffff; font-size: 32px; font-weight: 600; letter-spacing: -0.5px;">
+                                ¡Bienvenido!
+                            </h1>
+                            <p style="margin: 12px 0 0 0; color: rgba(255,255,255,0.9); font-size: 16px;">
+                                Tu cuenta ha sido creada exitosamente
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Contenido principal -->
+                    <tr>
+                        <td style="padding: 50px 40px;">
+                            <p style="margin: 0 0 25px 0; color: #4a5568; font-size: 16px; line-height: 1.6;">
+                                Hola, Bienvenido
+                            </p>
+                            
+                            <p style="margin: 0 0 30px 0; color: #4a5568; font-size: 16px; line-height: 1.6;">
+                                Nos complace informarte que tu cuenta ha sido creada correctamente. A continuación encontrarás tus credenciales de acceso:
+                            </p>
+                            
+                            <!-- Caja de credenciales -->
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f7fafc; border-radius: 8px; border-left: 4px solid #667eea; margin-bottom: 30px;">
+                                <tr>
+                                    <td style="padding: 30px;">
+                                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                            <tr>
+                                                <td style="padding-bottom: 20px;">
+                                                    <p style="margin: 0 0 8px 0; color: #718096; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                                                        Usuario
+                                                    </p>
+                                                    <p style="margin: 0; color: #2d3748; font-size: 18px; font-weight: 600; font-family: 'Courier New', monospace;">
+                                                        {{username}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p style="margin: 0 0 8px 0; color: #718096; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+                                                        Contraseña temporal
+                                                    </p>
+                                                    <p style="margin: 0; color: #2d3748; font-size: 18px; font-weight: 600; font-family: 'Courier New', monospace;">
+                                                        {{password}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Alerta de seguridad -->
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #fff5f5; border-radius: 8px; border: 1px solid #feb2b2; margin-bottom: 30px;">
+                                <tr>
+                                    <td style="padding: 20px;">
+                                        <p style="margin: 0; color: #742a2a; font-size: 14px; line-height: 1.6;">
+                                            <strong>⚠️ Importante:</strong> Por tu seguridad, te recomendamos cambiar tu contraseña en el primer acceso. Nunca compartas tus credenciales con nadie.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Botón de acción -->
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <td align="center" style="padding: 10px 0 30px 0;">
+                                        <a href="{{URL_LOGIN}}" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4); transition: transform 0.2s;">
+                                            Iniciar Sesión
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <p style="margin: 0 0 20px 0; color: #4a5568; font-size: 15px; line-height: 1.6;">
+                                Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.
+                            </p>
+                            
+                            <p style="margin: 0; color: #4a5568; font-size: 15px; line-height: 1.6;">
+                                Saludos cordiales,<br>
+                                <strong style="color: #2d3748;">El equipo de soporte de Urgencias Domiciliarias del Café </strong>
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #f7fafc; padding: 30px 40px; border-top: 1px solid #e2e8f0;">
+                            <p style="margin: 0 0 10px 0; color: #718096; font-size: 13px; text-align: center; line-height: 1.5;">
+                                Este es un correo automático, por favor no respondas a este mensaje.
+                            </p>
+                            <p style="margin: 0; color: #a0aec0; font-size: 12px; text-align: center;">
+                                © 2024 Urgencias Domiciliarias del Café. Todos los derechos reservados.
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

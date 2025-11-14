@@ -8,9 +8,9 @@ app.use(express.json());
 app.use(verifyToken);
 
 
-app.use("/api/tecnicos", require("./routes/tecnicoRoutes"));
-app.use("/api/equipos", require("./routes/equipoRoutes"));
-app.use("/api/reparaciones", require("./routes/reparacionRoutes"));
+app.use("/api/technicians", require("./routes/tecnicoRoutes"));
+app.use("/api/equipments", require("./routes/equipoRoutes"));
+app.use("/api/reparations", require("./routes/reparacionRoutes"));
 
 app.get("/", (req, res) => {
   res.send("Microservicio de Notificaciones funcionando 🚀");
