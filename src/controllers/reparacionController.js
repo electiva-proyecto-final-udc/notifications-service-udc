@@ -10,10 +10,16 @@ exports.finishReparation = async (req, res) => {
     const dto = new MailDTO({
       to: req.body.to,
       subject: "Reparación finalizada",
-      templateName: "welcomeEmail",
+      templateName: "finishServiceEmail",
       templateData: {
-        username: req.body.username,
-        password: req.body.password
+        technicianName: req.body.technicianName,
+        serviceNum: req.body.serviceNum,
+        clientName: req.body.clientName,
+        equipType: req.body.equipType,
+        model: req.body.model,
+        description: req.body.description,
+        date: req.body.date,
+        priority: req.body.priority
       },
       pdf: false
     });

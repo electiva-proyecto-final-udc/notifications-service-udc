@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio Finalizado</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif; background-color: #f5f5f7;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f5f5f7; padding: 50px 20px;">
+        <tr>
+            <td align="center">
+                <!-- Contenedor principal -->
+                <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="background-color: #ffffff; border-radius: 18px; overflow: hidden; max-width: 100%; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td style="padding: 50px 40px 30px 40px; text-align: center;">
+                            <!-- Icono de éxito -->
+                            <!-- Icono de éxito -->
+                            <div style="width: 90px; height: 90px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 50%; margin: 0 auto 30px; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3); text-align: center; line-height: 90px;">
+                                <span style="color: #ffffff; font-size: 50px; font-weight: bold;">✓</span>
+                            </div>
+                            
+                            <h1 style="margin: 0 0 12px 0; color: #1d1d1f; font-size: 32px; font-weight: 600; letter-spacing: -0.5px;">
+                                ¡Servicio Completado!
+                            </h1>
+                            <p style="margin: 0; color: #86868b; font-size: 17px; font-weight: 400; line-height: 1.4;">
+                                Tu equipo ha sido reparado exitosamente
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Contenido principal -->
+                    <tr>
+                        <td style="padding: 0 40px 50px 40px;">
+                            <p style="margin: 0 0 30px 0; color: #1d1d1f; font-size: 17px; line-height: 1.5; text-align: center;">
+                                Estimado(a) <strong style="font-weight: 600;">{{clientName}}</strong>, nos complace informarte que el servicio de reparación ha sido finalizado.
+                            </p>
+                            
+                            <!-- Tarjeta de resumen del servicio -->
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background: linear-gradient(135deg, #fafafa 0%, #f5f5f7 100%); border-radius: 16px; margin-bottom: 24px; border: 1px solid #e5e5e7;">
+                                <tr>
+                                    <td style="padding: 32px;">
+                                        <!-- Número de servicio -->
+                                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background: white; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                                            <tr>
+                                                <td align="center">
+                                                    <p style="margin: 0 0 8px 0; color: #86868b; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px;">
+                                                        Servicio No.
+                                                    </p>
+                                                    <p style="margin: 0; color: #10b981; font-size: 28px; font-weight: 700; font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;">
+                                                        {{serviceNum}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <!-- Equipo reparado -->
+                                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 20px;">
+                                            <tr>
+                                                <td>
+                                                    <p style="margin: 0 0 6px 0; color: #86868b; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px;">
+                                                        Equipo Reparado
+                                                    </p>
+                                                    <p style="margin: 0; color: #1d1d1f; font-size: 18px; font-weight: 500;">
+                                                        {{equipType}}
+                                                    </p>
+                                                    <p style="margin: 4px 0 0 0; color: #86868b; font-size: 15px;">
+                                                        {{model}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <!-- Separador -->
+                                        <div style="height: 1px; background: linear-gradient(to right, transparent, #e5e5e7, transparent); margin-bottom: 20px;"></div>
+                                        
+                                        <!-- Técnico asignado -->
+                                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 20px;">
+                                            <tr>
+                                                <td>
+                                                    <p style="margin: 0 0 6px 0; color: #86868b; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px;">
+                                                        Técnico Asignado
+                                                    </p>
+                                                    <p style="margin: 0; color: #1d1d1f; font-size: 18px; font-weight: 500;">
+                                                        {{technicianName}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <!-- Separador -->
+                                        <div style="height: 1px; background: linear-gradient(to right, transparent, #e5e5e7, transparent); margin-bottom: 20px;"></div>
+                                        
+                                        <!-- Trabajo realizado -->
+                                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                            <tr>
+                                                <td>
+                                                    <p style="margin: 0 0 6px 0; color: #86868b; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px;">
+                                                        Trabajo Realizado
+                                                    </p>
+                                                    <p style="margin: 0; color: #1d1d1f; font-size: 16px; font-weight: 400; line-height: 1.5;">
+                                                        {{description}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Fecha de finalización -->
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom: 32px;">
+                                <tr>
+                                    <td align="center">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="background: #f0f9ff; border-radius: 12px; padding: 16px 40px; border: 1px solid #bfdbfe;">
+                                            <tr>
+                                                <td align="center">
+                                                    <p style="margin: 0 0 4px 0; color: #1e40af; font-size: 12px; font-weight: 600; text-transform: uppercase;">
+                                                        📅 Fecha de Finalización
+                                                    </p>
+                                                    <p style="margin: 0; color: #1e40af; font-size: 15px; font-weight: 600;">
+                                                        {{date}}
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Botón de acción -->
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 30px;">
+                                        <a href="{{URL_SERVICIO}}" style="display: inline-block; background: rgb(26, 65, 205); color: #ffffff; text-decoration: none; padding: 14px 48px; border-radius: 12px; font-weight: 600; font-size: 17px; box-shadow: 0 2px 12px rgba(26, 65, 205, 0.3);">
+                                            Ver Detalles del Servicio
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Texto final -->
+                            <p style="margin: 0; color: #86868b; font-size: 15px; line-height: 1.6; text-align: center;">
+                                Gracias por confiar en nosotros. Si tienes alguna pregunta, no dudes en contactarnos.
+                            </p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #fafafa; padding: 30px 40px; border-top: 1px solid #f0f0f0;">
+                            <p style="margin: 0 0 8px 0; color: #86868b; font-size: 13px; text-align: center; line-height: 1.4;">
+                                Este es un mensaje automático del sistema de reparaciones.
+                            </p>
+                            <p style="margin: 0; color: #d2d2d7; font-size: 12px; text-align: center;">
+                                © 2024 Urgencias Domiciliarias del Café. Todos los derechos reservados.
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+                
+                <!-- Espaciador inferior -->
+                <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="max-width: 100%;">
+                    <tr>
+                        <td style="padding: 30px 20px 0 20px; text-align: center;">
+                            <p style="margin: 0; color: #86868b; font-size: 12px; line-height: 1.5;">
+                                Urgencias Domiciliarias del Café | Sistema de Gestión de Reparaciones
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

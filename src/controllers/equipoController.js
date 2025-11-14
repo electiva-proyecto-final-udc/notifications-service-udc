@@ -7,11 +7,17 @@ exports.equipmentRegistered = async (req, res) => {
   try {
     const dto = new MailDTO({
       to: req.body.to,
-      subject: "Has creado un nuevo matenimiento",
-      templateName: "welcomeEmail",
+      subject: "Te han asignado un mantenimiento",
+      templateName: "newServiceEmail",
       templateData: {
-        username: req.body.username,
-        password: req.body.password
+        technicianName: req.body.technicianName,
+        serviceNum: req.body.serviceNum,
+        clientName: req.body.clientName,
+        equipType: req.body.equipType,
+        model: req.body.model,
+        description: req.body.description,
+        date: req.body.date,
+        priority: req.body.priority
       },
       pdf: false
     });
