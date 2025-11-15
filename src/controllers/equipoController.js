@@ -1,7 +1,6 @@
-const EquipoDTO = require("../dto/EquipoDTO");
-const equipoService = require("../services/equipoService");
 const MailDTO = require("../dto/MailDTO");
 const { sendMail } = require("../services/sendEmailService");
+const notificationRepository = require("../repositories/notificationRepository");
 
 exports.equipmentRegistered = async (req, res) => {
   try {
@@ -23,8 +22,14 @@ exports.equipmentRegistered = async (req, res) => {
     });
 
     await sendMail(dto);
+    await notificationRepository.save({
+      personId: dto.userId || "unknown",
+      toEmail: dto.to,
+      notificationType: "newEquipment",
+      createdAt: new Date().toISOString()
+    });
 
-  res.json({ status: "success", message: "Mantenimiento registrado" });
+    res.json({ status: "success", message: "Mantenimiento registrado" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "No se pudo enviar el correo" });

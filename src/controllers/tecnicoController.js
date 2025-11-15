@@ -1,9 +1,6 @@
-const TecnicoDTO = require("../dto/TecnicoDTO");
-const tecnicoService = require("../services/tecnicoService");
-const { bienvenidaTecnico } = require("../utils/emailTemplates");
-
 const MailDTO = require("../dto/MailDTO");
 const { sendMail } = require("../services/sendEmailService");
+const notificationRepository = require("../repositories/notificationRepository");
 
 exports.sendWelcomeEmail = async (req, res) => {
   try {
@@ -20,27 +17,17 @@ exports.sendWelcomeEmail = async (req, res) => {
 
     await sendMail(dto);
 
-    res.json({ status: "success", message: "Correo enviado"});
+    await notificationRepository.save({
+      personId: dto.userId || "unknown",
+      toEmail: dto.to,
+      notificationType: "welcomeEmail",
+      createdAt: new Date().toISOString()
+    });
+
+    res.json({ status: "success", message: "Correo enviado" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "No se pudo enviar la bienvenida" });
   }
 };
-
-
-// exports.registrarTecnico = (req, res) => {
-//   const { nombre, usuario, correo, password } = req.body;
-//   const tecnico = new TecnicoDTO(nombre, usuario, correo, password);
-//   const saved = tecnicoService.save(tecnico);
-
-//   const mensajeCorreo = bienvenidaTecnico(saved);
-
-//   res.json({
-//     status: "success",
-//     message: "Técnico registrado",
-//     data: saved,
-//     correoSimulado: mensajeCorreo
-//   });
-// };
-
 

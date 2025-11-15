@@ -1,6 +1,5 @@
-const ReparacionDTO = require("../dto/ReparacionDTO");
-const reparacionService = require("../services/reparacionService");
 const { generarReporte } = require("../utils/pdfGenerator");
+const notificationRepository = require("../repositories/notificationRepository");
 
 const MailDTO = require("../dto/MailDTO");
 const { sendMail } = require("../services/sendEmailService");
@@ -24,9 +23,16 @@ exports.finishReparation = async (req, res) => {
       pdf: false
     });
 
+    await notificationRepository.save({
+      personId: dto.userId || "unknown",
+      toEmail: dto.to,
+      notificationType: "finishReparation",
+      createdAt: new Date().toISOString()
+    });
+
     await sendMail(dto);
 
-  res.json({ status: "success", message: "Reparación finalizada"});
+    res.json({ status: "success", message: "Reparación finalizada" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "No se pudo enviar el correo" });
