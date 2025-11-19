@@ -16,7 +16,7 @@ async function finishReparationService(payload) {
         priority
     } = payload;
 
-    // 1. Consultar datos reales desde el micro de usuarios
+    // Consultar datos desde el micro de usuarios
     const technicianResponse = await getTechnicianById(technicianId);
     const clientResponse = await getClientById(clientId);
 
@@ -26,9 +26,10 @@ async function finishReparationService(payload) {
     if (!client?.email) {
         throw new Error("El cliente no tiene correo registrado");
     }
+    today = new Date().toISOString().split("T")[0];
     equipTypeTranslated = translateEquipmentType(equipType)
     const dto = new MailDTO({
-        to: technician.email,
+        to: client.email,
         subject: "Reparación finalizada",
         templateName: "finishServiceEmail",
         templateData: {
@@ -38,21 +39,20 @@ async function finishReparationService(payload) {
             equipType: equipTypeTranslated,
             model,
             description,
-            date,
+            date: today,
             priority
         },
         pdf: false
     });
 
-    // 3. Guardar log de notificación
     await notificationRepository.save({
         personId: clientId,
-        toEmail: technician.email,
+        toEmail: client.email,
         notificationType: "finishReparation",
-        createdAt: new Date().toISOString()
+        createdAt: today
     });
 
-    // 4. Enviar correo
+    // Enviar correo
     await sendMail(dto);
 
 
