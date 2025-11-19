@@ -31,17 +31,7 @@ async function sendMail(mailDTO) {
     html,
     attachments
   });
-
-//   Guardar registro en repositorio
-//   mailRepo.save({
-//     to: mailDTO.to,
-//     subject: mailDTO.subject,
-//     templateName: mailDTO.templateName,
-//     pdf: mailDTO.pdf,
-//     data: mailDTO.templateData,
-//     userId: mailDTO.userId,
-//     timestamp: mailDTO.timestamp
-//   });
+  console.log(sendResult);
 
   return sendResult;
 }

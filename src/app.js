@@ -15,7 +15,7 @@ app.use("/notification-service/equipments", require("./routes/equipoRoutes"));
 app.use("/notification-service/reparations", require("./routes/reparacionRoutes"));
 
 app.get("/", (req, res) => {
-  res.send("Microservicio de Notificaciones funcionando 🚀");
+  res.send("Microservicio de Notificaciones funcionando ");
 });
 
 app.listen(port, () => {

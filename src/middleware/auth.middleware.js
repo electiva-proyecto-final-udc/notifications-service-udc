@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-
+const { setToken } = require("../config/httpClient");  // 👈 IMPORTANTE
 require("dotenv").config();
 
 module.exports = function verifyToken(req, res, next) {
@@ -18,9 +18,10 @@ module.exports = function verifyToken(req, res, next) {
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
+        req.user = decoded;
         global.decodedUser = decoded;
 
-        req.user = decoded;
+        setToken(token);
 
         next();
     } catch (err) {
